@@ -25,6 +25,7 @@
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
   --animate-fade-in-delay-5: fade-in 0.7s ease-out 1s forwards;
   --animate-meteor: meteor 5s linear infinite;
+  --animate-shimmer: shimmer 2s infinite;
 
   @keyframes grow {
     from {
@@ -74,6 +75,11 @@
       transform: rotate(215deg) translateX(-500px);
       opacity: 0;
     }
+  },
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
   }
 }
 

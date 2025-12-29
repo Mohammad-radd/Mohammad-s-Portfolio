@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "../lib/ulits";
-import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
+// import { Menu, X } from "lucide-react";
 
 const navItem = [
   { name: "Hero", href: "#hero" },
@@ -44,6 +45,7 @@ export function Navbar(){
         </a>
 
         {/* Desktio nav */}
+        <div className="flex gap-4 items-center">
         <div className="hidden md:flex space-x-8">
           {navItem.map((item, key) => (
             <a
@@ -54,6 +56,10 @@ export function Navbar(){
               {item.name}
             </a>
           ))}
+        </div>
+          <div>
+            <ThemeToggle />
+          </div>
         </div>
 
         {/* Mobile nav */}
