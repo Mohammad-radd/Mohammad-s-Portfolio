@@ -20,8 +20,10 @@ export function HeroSection(){
             Specializing in front-end development, I build interfaces that are
             both beautiful and functional.
           </p>
-          <div className="opacity-0 animate-fade-in-delay-4 pt-4">
-            <a href="#skills" className="cosmic-button"> View my skills</a>
+          <div className="flex justify-center">
+          <div className="opacity-0 animate-fade-in-delay-4 cosmic-button ">
+            <a href="#skills"> View my skills</a>
+          </div>
           </div>
         </div>
       </div>
