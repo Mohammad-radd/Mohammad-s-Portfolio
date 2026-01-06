@@ -4,7 +4,8 @@ const projects = [
   {
     id: 1,
     title: "Portfolio Landing Page",
-    description: "A responsive portfolio showcasing clean UI and performance, built to present myself.",
+    description:
+      "A responsive portfolio showcasing clean UI and performance, built to present myself.",
     image: "../../public/Projects/protfolio.png",
     tags: ["HTML", "TailwindCSS", "React"],
     demoUrl: "https://radd.ir/",
@@ -19,8 +20,7 @@ const projects = [
     tags: ["HTML", "TailwindCSS", "JavaScript"],
     demoUrl: "#",
     githubUrl: "https://github.com/Mohammad-radd/Net-Afzar-copy.git",
-  }
-
+  },
 ];
 
 export function ProjectSection() {
@@ -38,7 +38,7 @@ export function ProjectSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
+            <div className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover flex flex-col">
               <div className="h-48 overflow-hidden">
                 <img
                   src={project.image}
@@ -46,30 +46,47 @@ export function ProjectSection() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="p-6">
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">{tag}</span>
-                ))}
-              </div>
-              <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
-              <p className="text-muted-foreground text-sm"> {project.description}</p>
-              </div>
-              <div className="flex justify-between items-center bottom-0 p-3">
-                <div className="">
-                    <a href={project.githubUrl} target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300">
-                        <Github size={20}/>
-                    </a>
+
+              <div className="p-6 flex flex-col gap-4 flex-1">
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
+
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
+
+              <div className="px-6 py-4">
+                <div className="h-px w-full bg-linear-to-r from-transparent via-primary/40 to-transparent mb-4" />
+
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Github size={18} />
+                  View source
+                </a>
               </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-12">
-            <a href="#" target="_blank" className="cosmic-button w-fit flex items-center mx-auto gap-2" >
-                Check My GitHub <ArrowRight size={16}/>
-            </a>
+          <a
+            href="#"
+            target="_blank"
+            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+          >
+            Check My GitHub <ArrowRight size={16} />
+          </a>
         </div>
       </div>
     </section>
